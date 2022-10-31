@@ -17,7 +17,7 @@ const ContentLayout: React.FC<IContentLayoutProps> = ({ children }) => {
           {children[1]}
         </Box>
         {/* sidebar */}
-        <Box display={{ base: "none", md: "unset" }} flex={2}>
+        <Box display={{ base: "none", xl: "unset" }} flex={2}>
           {children[2]}
         </Box>
       </Flex>

@@ -8,7 +8,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main style={{ marginTop: "75px" }}>{children}</main>
     </>
   );
 };

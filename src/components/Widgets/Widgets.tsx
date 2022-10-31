@@ -1,11 +1,14 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import React from "react";
+import Discuss from "./Discuss";
+import Help from "./Help";
 
 const Widgets: React.FC = () => {
   return (
-    <Box height="100vh" bg="orange.200">
-      Widgets
-    </Box>
+    <Stack>
+      <Help />
+      <Discuss />
+    </Stack>
   );
 };
 
