@@ -9,10 +9,15 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import { FaBookmark, FaComment, FaHeart } from "react-icons/fa";
+import HoverView from "../Profile/HoverView";
 
 const Feed = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const onClose = () => setOpen(false);
+  const onOpen = () => setOpen(true);
   return (
     <Box rounded={"sm"} boxShadow="md" bg="white">
       <Image
@@ -24,13 +29,27 @@ const Feed = () => {
 
       <Stack padding="10px 13px">
         <Flex gap={3}>
-          <Avatar size={"sm"} />
+          <Link href="/coderboysobuj">
+            <Avatar size={"sm"} />
+          </Link>
           <Stack flexGrow={1} spacing={4}>
             <Flex flexDir={"column"} lineHeight={1.5} justify="center">
-              <Text fontSize={{ base: "md", md: "sm" }} fontWeight="semibold">
-                Jhone deo
-              </Text>
-              <Text fontWeight={"light"} fontSize="small">
+              <HoverView open={open} onClose={onClose} onOpen={onOpen}>
+                <Text
+                  cursor="pointer"
+                  _hover={{ bg: "blackAlpha.200" }}
+                  width="max-content"
+                  rounded="md"
+                  px={1}
+                  py={0.5}
+                  onMouseEnter={onOpen}
+                  fontSize={{ base: "md", md: "sm" }}
+                  fontWeight="semibold"
+                >
+                  Jhone deo
+                </Text>
+              </HoverView>
+              <Text px={1} fontWeight={"light"} fontSize="small">
                 2 hours ago
               </Text>
             </Flex>

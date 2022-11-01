@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 interface ILayoutProps {
@@ -8,7 +9,8 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main style={{ marginTop: "75px" }}>{children}</main>
+      <main style={{ marginTop: "45px" }}>{children}</main>
+      <Footer />
     </>
   );
 };

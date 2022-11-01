@@ -8,13 +8,15 @@ import Widgets from "../components/Widgets/Widgets";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <ContentLayout>
-        <Sidebar />
-        <Main />
-        <Widgets />
-      </ContentLayout>
-    </Layout>
+    <main style={{ marginTop: "60px" }}>
+      <Layout>
+        <ContentLayout>
+          <Sidebar />
+          <Main />
+          <Widgets />
+        </ContentLayout>
+      </Layout>
+    </main>
   );
 };
 

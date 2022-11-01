@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { FaSearch } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
@@ -26,22 +27,23 @@ const Header: React.FC = () => {
       boxShadow="sm"
       borderBottom="1px"
       borderColor="whiteAlpha.600"
+      height="45px"
+      display="flex"
+      alignItems="center"
     >
       <Container maxW={"container.lg"} py={2}>
         <Flex width="100%" align="center" justify="space-between" gap={5}>
-          <Flex align="center" gap={3} flexGrow={1}>
+          <Flex align="center" gap={{ base: 2, md: 3 }} flexGrow={1}>
             <IconButton
               aria-label="menu"
               variant="ghost"
               icon={<Icon as={HiMenu} fontSize="xl" />}
               display={{ base: "block", md: "none" }}
             />
-            <Image
-              display={{ base: "none", md: "flex" }}
-              src="/images/LOGO.png"
-              maxW={"100%"}
-              w="42px"
-            />
+            <Link href="/">
+              <Image src="/images/LOGO.png" maxW={"100%"} w="42px" />
+            </Link>
+
             <InputGroup
               display={{ base: "none", md: "flex" }}
               maxW={"500px"}
@@ -59,28 +61,33 @@ const Header: React.FC = () => {
             </InputGroup>
           </Flex>
           <Flex gap={2} align="center">
-            <Button
-              display={{ base: "none", md: "unset" }}
-              height="35px"
-              size="sm"
-              variant={"ghost"}
-            >
-              Log in
-            </Button>
+            <Link href="/login">
+              <Button
+                display={{ base: "none", md: "unset" }}
+                height="35px"
+                size="sm"
+                variant={"ghost"}
+              >
+                Log in
+              </Button>
+            </Link>
+
             <IconButton
               variant="ghost"
               aria-label="search"
               display={{ base: "unset", md: "none" }}
               icon={<Icon as={FaSearch} />}
             />
-            <Button
-              height="35px"
-              size="sm"
-              variant={"outline"}
-              colorScheme="blue"
-            >
-              Create account
-            </Button>
+            <Link href="/enter">
+              <Button
+                height="35px"
+                size="sm"
+                variant={"outline"}
+                colorScheme="blue"
+              >
+                Create account
+              </Button>
+            </Link>
           </Flex>
         </Flex>
       </Container>
